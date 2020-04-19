@@ -1,8 +1,11 @@
 package com.romanov.patterns.creational.factory.abstracted;
 
-public class HeavyTankFactory extends Tank {
+import org.apache.commons.lang3.RandomStringUtils;
 
-    HeavyTankFactory(String commanderName) {
-        super(commanderName);
+public class HeavyTankFactory implements TankFactory {
+
+    @Override
+    public Tank createTank() {
+        return new HeavyTank(RandomStringUtils.randomAlphabetic(15));
     }
 }
